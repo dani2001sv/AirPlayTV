@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:keepScreenOn="true">
+
+    <!-- Nombre de la app — esquina superior izquierda -->
+    <TextView
+        android:id="@+id/appNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:alpha="0.5"
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp" />
+
+    <!-- ZONA CENTRAL: Indicador de estado -->
+    <com.airplaytv.StatusIndicatorView
+        android:id="@+id/statusIndicatorView"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/statusLabelText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVerticalChainStyle="packed"
+        app:layout_constraintVerticalBias="0.42" />
+
+    <!-- Etiqueta de estado -->
+    <TextView
+        android:id="@+id/statusLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_waiting"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05"
+        app:layout_constraintTop_toBottomOf="@id/statusIndicatorView"
+        app:layout_constraintBottom_toTopOf="@id/statusSubtitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp" />
+
+    <!-- Subtítulo (nombre del cliente o instrucción) -->
+    <TextView
+        android:id="@+id/statusSubtitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/instruction_open_control_center"
+        android:textColor="#FFFFFF"
+        android:alpha="0.6"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintTop_toBottomOf="@id/statusLabelText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="0dp" />
+
+    <!-- PANEL INFERIOR: Info del dispositivo -->
+    <LinearLayout
+        android:id="@+id/deviceInfoPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_panel"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp">
+
+        <!-- Icono TV -->
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_tv"
+            android:alpha="0.7"
+            android:tint="#FFFFFF" />
+
+        <!-- Nombre del dispositivo -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/deviceNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AirPlay TV"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/ipAddressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="192.168.1.100"
+                android:textColor="#FFFFFF"
+                android:alpha="0.55"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- Separador -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="36dp"
+            android:background="#33FFFFFF"
+            android:layout_marginEnd="20dp" />
+
+        <!-- Botones de acción -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Botón cambiar nombre -->
+            <TextView
+                android:id="@+id/btnChangeDeviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_change_name"
+                android:textColor="#FFFFFF"
+                android:alpha="0.7"
+                android:textSize="13sp"
+                android:background="@drawable/bg_button_outline"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_marginEnd="12dp" />
+
+            <!-- Botón activar/desactivar -->
+            <TextView
+                android:id="@+id/btnToggleService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_stop"
+                android:textColor="#FFFFFF"
+                android:alpha="0.7"
+                android:textSize="13sp"
+                android:background="@drawable/bg_button_outline"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:focusable="true"
+                android:clickable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Warning: sin red WiFi -->
+    <LinearLayout
+        android:id="@+id/networkWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:background="@drawable/bg_warning"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠️  "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/warning_no_wifi"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

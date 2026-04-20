@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema principal para Android TV (sin ActionBar) -->
+    <style name="Theme.AirPlayTV" parent="Theme.AppCompat.Leanback">
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Sin StatusBar en TV -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+    <!-- Tema para el diálogo de nombre -->
+    <style name="Theme.AirPlayTV.Dialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorAccent">#4A9EFF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:background">#1E2A3A</item>
+    </style>
+
+</resources>

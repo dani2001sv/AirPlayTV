@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AirPlay TV</string>
+
+    <!-- Estados -->
+    <string name="status_idle">Inactivo</string>
+    <string name="status_starting">Iniciando…</string>
+    <string name="status_waiting">Listo para recibir</string>
+    <string name="status_connected">Conectado: %s</string>
+    <string name="status_error">Error del servidor</string>
+
+    <!-- Instrucciones -->
+    <string name="instruction_open_control_center">Abre el Centro de control en tu iPhone\ny pulsa "Duplicar pantalla"</string>
+    <string name="instruction_connected">Transmitiendo desde tu iPhone</string>
+
+    <!-- Info -->
+    <string name="no_network">Sin red WiFi</string>
+    <string name="warning_no_wifi">Sin WiFi — el iPhone no podrá conectarse</string>
+
+    <!-- Botones -->
+    <string name="btn_stop">Detener</string>
+    <string name="btn_start">Activar</string>
+    <string name="btn_change_name">Cambiar nombre</string>
+
+    <!-- Diálogo nombre -->
+    <string name="dialog_device_name_title">Nombre del dispositivo</string>
+    <string name="dialog_save">Guardar</string>
+    <string name="dialog_cancel">Cancelar</string>
+
+    <!-- Notificación -->
+    <string name="notification_channel_name">Servidor AirPlay</string>
+</resources>
